@@ -12,10 +12,9 @@ import static org.quartz.SimpleScheduleBuilder.*;
 
 public class AlertRabbit {
     private static Properties getPropertiesInterval() {
-        Properties result = null;
+        Properties result = new Properties();
         try (InputStream in = AlertRabbit.class.getClassLoader()
                 .getResourceAsStream("rabbit.properties")) {
-            result = new Properties();
             result.load(in);
         } catch (Exception e) {
             e.printStackTrace();
